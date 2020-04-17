@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1587070097 source:c:\users\luana\desktop\workspace\menutp\main.c
+	<stdio.h>
+	<stdlib.h>
+	"operacionesMat.h"
+
+1587044068 c:\users\luana\desktop\workspace\menutp\operaciones.h
+	"operaciones.h"
+	"funcionesMat.h"
+
+1587043152 c:\users\luana\desktop\workspace\menutp\funcionesmat.h
+	"operaciones.h"
+	"funcionesMat.h"
+
+1587070098 c:\users\luana\desktop\workspace\menutp\operacionesmat.h
+	"operacionesMat.h"
+
+1587069500 source:c:\users\luana\desktop\workspace\menutp\operacionesmat.c
+	<stdio.h>
+	<stdlib.h>
+	"operacionesMat.h"
+
