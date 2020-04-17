@@ -19,10 +19,18 @@ int menuOpciones(){
     int opcion;
 
     system("cls");
-    printf("**** Calculadora ****\n\n");
-    printf("1- Ingresar primer operando (A=x)\n");
-    printf("2- Ingresar segundo operando (B=y)\n");
+    printf("   *****************************************  \n");
+    printf("   **** Calculadora de numeros enteros *****  \n");
+    printf("   **** Selecciones opciones del 1 al 5 ****  \n");
+    printf("   *****************************************  \n\n");
+    printf("1- Ingresar primer operando (A=%d)\n", a);
+    printf("2- Ingresar segundo operando (B=%d)\n", b);
     printf("3- Calcular todas las operaciones\n");
+    printf("  a) Calcular la suma(%d+%d)\n", a, b);
+    printf("  b) Calcular la resta(%d-%d)\n", a, b);
+    printf("  c) Calcular la division(%d/%d)\n", a, b);
+    printf("  d) Calcular la multiplicacion(%d*%d)\n", a, b);
+    printf("  e) Calcular el factorial (%d!)\n", a);
     printf("4- Informar resultados\n");
     printf("5- Salir\n\n");
 
@@ -97,24 +105,17 @@ int factorial(int a)
 }
 
 int resultados(int menuOpciones){
-    if(op == 'a'){
-        printf("a) El resultado de A+B es: %d\n\n", suma);
-    }
-    else if(op == 'b'){
+    if(op != 'a' && op != 'b' && op != 'c' && op != 'd' && op != 'e'){
+            printf("Operacion invalida\n\n");
+        }
+    else{
+        printf("a) El resultado de A+B es: %d\n", suma);
         printf("b) El resultado de A-B es: %d\n", resta);
-    }
-    else if(op == 'c'){
         printf("c) El resultado de A/B es: %d\n", division);
-    }
-    else if(op == 'd'){
         printf("d) El resultado de A*B es: %d\n", mult);
-    }
-    else if(op == 'e'){
         printf("e) El factorial de A es: %d y el factorial de B es: %d\n\n", fac, fac2);
     }
-    else{
-        printf("Operacion invalida\n\n");
-    }
+
 
     return menuOpciones;
 }
