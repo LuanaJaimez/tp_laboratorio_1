@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1587171479 source:c:\users\luana\desktop\workspace\menutp\main.c
+1587238238 source:c:\users\luana\desktop\workspace\menutp\main.c
 	<stdio.h>
 	<stdlib.h>
 	"operacionesMat.h"

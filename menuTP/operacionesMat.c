@@ -3,10 +3,40 @@
 #include <string.h>
 #include "operacionesMat.h"
 
-//Funcion para calcular factorial
+/** \brief calcula el factorial de un numero
+ *
+ * \param numero sobre el que se realizara la operacion
+ * \return factorial del numero ingresado
+ *
+ */
 int factorial(int a);
 
-//Se declaran variables que seran usadas por las funciones
+/** \brief mensaje que pide al usuario el ingreso del primer operando */
+void operando1();
+
+/** \brief mensaje que pide al usuario el ingreso del segundo operando */
+void operando2();
+
+/** \brief realiza las operaciones matematicas de suma, resta, multiplicacion, division y factorial
+ *
+ * \param sitio de donde se toman y colocan los datos
+ * \return todas las operaciones matematicas calculadas
+ *
+ */
+int operaciones(int menuOpciones);
+
+/** \brief muestra los resultados de las operaciones realizadas
+ *
+ * \param sitio donde se toman y colocan los datos
+ * \return valores de la suma, resta, multiplicacion, division y factorial de A y B
+ *
+ */
+int resultados(int menuOpciones);
+
+
+
+
+//Declaracion de variables
 int numeroA = 0;
 int numeroB = 0;
 int suma;
@@ -22,8 +52,6 @@ float divisionR;
 int facR;
 int fac2R;
 
-
-//int validar_numero(char operando[]);
 
 int menuOpciones()
 {
@@ -63,22 +91,18 @@ int menuOpciones()
 ////////////////////
 void operando1()
 {
-    //Se pide el operando A
+//Se pide el operando A
     printf("Ingrese 1er operando: ");
     scanf("%d", &numeroA);
-
-
 }
 
 
 ////////////////////
 void operando2()
 {
-    //Se pide el operando B
+//Se pide el operando B
     printf("Ingrese 2do operando: ");
     scanf("%d", &numeroB);
-
-
 }
 
 
