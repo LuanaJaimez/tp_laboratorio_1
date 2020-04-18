@@ -5,8 +5,10 @@
 int main()
 {
     char seguir = 's';
-    do{
-            switch(menuOpciones ()){
+    do
+    {
+        switch(menuOpciones ())
+        {
 
         case 1:
             operando1();
@@ -23,12 +25,11 @@ int main()
         case 5:
             seguir = 'n';
             break;
-        default:
-            printf("No es una opcion valida\n");
-            }
+        }
 
-    system("pause");
-    }while(seguir == 's');
+        system("pause");
+    }
+    while(seguir == 's');
 
 
     return 0;
