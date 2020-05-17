@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1589681868 source:c:\users\luana\desktop\workspace\tp2-empleados\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+	"informes.h"
+	"utn.h"
+
+1589334089 c:\users\luana\desktop\workspace\tp2-empleados\datawarehouse.h
+
+1589682849 c:\users\luana\desktop\workspace\tp2-empleados\arrayemployees.h
+
+1589583044 c:\users\luana\desktop\workspace\tp2-empleados\sector.h
+
+1589681765 source:c:\users\luana\desktop\workspace\tp2-empleados\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"informes.h"
+	"ArrayEmployees.h"
+	"utn.h"
+
+1589665964 source:c:\users\luana\desktop\workspace\tp2-empleados\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+	"dataWarehouse.h"
+
+1589670724 source:c:\users\luana\desktop\workspace\tp2-empleados\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1589666417 c:\users\luana\desktop\workspace\tp2-empleados\utn.h
+
+1589671898 c:\users\luana\desktop\workspace\tp2-empleados\datahardcode.h
+
+1589682310 c:\users\luana\desktop\workspace\tp2-empleados\informes.h
+	"ArrayEmployees.h"
+
+1589681898 source:c:\users\luana\desktop\workspace\tp2-empleados\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+	"informes.h"
+
