@@ -178,7 +178,7 @@
 	<ctype.h>
 	"utn.h"
 
-1592071264 source:c:\users\luana\desktop\tp3_cascara\win_64\controller.c
+1592088914 source:c:\users\luana\desktop\tp3_cascara\win_64\controller.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -188,11 +188,11 @@
 	"Controller.h"
 	<string.h>
 
-1533133022 c:\users\luana\desktop\tp3_cascara\win_64\parser.h
+1592080950 c:\users\luana\desktop\tp3_cascara\win_64\parser.h
 
-1592083759 c:\users\luana\desktop\tp3_cascara\win_64\controller.h
+1592089134 c:\users\luana\desktop\tp3_cascara\win_64\controller.h
 
-1592071113 source:c:\users\luana\desktop\tp3_cascara\win_64\main.c
+1592088280 source:c:\users\luana\desktop\tp3_cascara\win_64\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"

@@ -69,12 +69,12 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee);
 
 /** \brief Ordena los empleados por nombre
  *
- * \param nameA void*
- * \param nameB void*
- * \return int devuelve
+ * \param firstName void*
+ * \param secondName void*
+ * \return int change
  *
  */
-int sortName(void* nameA, void* nameB);
+int sortName(void* firstName, void* secondName);
 
 
 /** \brief Ordena los empleados

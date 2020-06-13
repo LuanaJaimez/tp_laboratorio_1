@@ -394,30 +394,33 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 
 //---------------------------------------------------------------------------------------------------
 
-int sortName(void* nameA, void* nameB)
+int sortName(void* firstName, void* secondName)
 {
-    int devuelve;
-    Employee* empleado1;
-    Employee* empleado2;
+    int change;
+    Employee* firstNameEmployee;
+    Employee* secondNameEmployee;
 
-    if(nameA != NULL && nameB != NULL)
+    if(firstName != NULL && secondName != NULL)
     {
-        empleado1 = (Employee*) nameA;
-        empleado2 = (Employee*) nameB;
+        firstNameEmployee = (Employee*) firstName;
+        secondNameEmployee = (Employee*) secondName;
 
-        devuelve = strcmp(empleado1->nombre,empleado2->nombre);
+        change = strcmp(firstNameEmployee->nombre, secondNameEmployee->nombre);
     }
 
-    return devuelve;
+    return change;
 }
 
 //---------------------------------------------------------------------------------------------------
 
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
+    int flag = 0;
     int exito = 1;
 
+    printf("Espere por favor...\n");
     ll_sort(pArrayListEmployee, sortName, 1);
+    //ll_sort(pArrayListEmployee, sortSalary, 1);
     exito = 0;
 
     if(exito == 0)
@@ -427,6 +430,23 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
     else
     {
         printf("Error al ordenar los empleados\n");
+    }
+
+
+    printf("***** Listado de Empleados *****\n");
+    printf("  Id      Nombre    Apellido     Sueldo    Sector\n\n");
+
+    for(int i=0; i < ll_len(pArrayListEmployee); i++)
+    {
+        if(pArrayListEmployee != NULL)
+        {
+            controller_ListEmployee(pArrayListEmployee);
+            flag = 1;
+        }
+    }
+    if(flag == 0)
+    {
+        printf("*** No hay empleados que listar ***\n");
     }
 
     return exito;
