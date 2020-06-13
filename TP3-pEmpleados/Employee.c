@@ -234,9 +234,7 @@ int employee_findById(LinkedList* pArrayListEmployee, int id)
 
 //---------------------------------------------------------------------------------------------------
 
-//int employee_listEmployee(Employee* pEmployee, int indice)
 int employee_listEmployee(LinkedList* pArrayListEmployee, int indice)
-//int employee_listEmployee(Employee* pEmployee, LinkedList* pArrayListEmployee)
 {
 	int auxId;
 	int auxHTrab;
