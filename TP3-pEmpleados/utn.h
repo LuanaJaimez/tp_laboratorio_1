@@ -1,7 +1,6 @@
 #ifndef UTN_H_INCLUDED
 #define UTN_H_INCLUDED
 
-
 void pause();
 
 int utn_getCadena(char *pAux, int limit, int retry, char* msg, char* msgError);
@@ -26,9 +25,8 @@ int strLwr(char* str);
 
 int normalizeStr(char* str);
 
-//estaticas
 int isValidName(char* cadena, int longitud);
-int isNumeric(char* cadena, int longitud);
 
+int isNumeric(char* cadena, int longitud);
 
 #endif // UTN_H_INCLUDED

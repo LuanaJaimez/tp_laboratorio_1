@@ -25,8 +25,8 @@ int main()
 {
     char confirm;
     char seguir = 's';
-    int flagText = 0;
-    int flagBin = 0;
+    int flagATexto = 0;
+    int flagABinario = 0;
 
 
     LinkedList* listaEmpleados = ll_newLinkedList();
@@ -35,11 +35,11 @@ int main()
         switch(menu())
         {
             case 1:
-            	if(flagBin != 1)//No existe
+            	if(flagABinario != 1)//No existe
             	{
             		if(!controller_loadFromText("data.csv", listaEmpleados))
 					{
-						flagText = 1;
+						flagATexto = 1;
 					}
             	}
             	else
@@ -48,11 +48,11 @@ int main()
 				}
                 break;
             case 2:
-            	if(flagText != 1)//No existe
+            	if(flagATexto != 1)//No existe
             	{
             		if(!controller_loadFromBinary("data.bin", listaEmpleados))
             		{
-            			flagBin = 1;
+            			flagABinario = 1;
             		}
             	}
             	else
@@ -62,7 +62,7 @@ int main()
             	break;
             case 3:
             	//validar que no entre si no entro al primer case (ahi ya leeria el archivo)
-            	if(flagText == 1 || flagBin == 1)
+            	if(flagATexto == 1 || flagABinario == 1)
             	{
             		controller_addEmployee("data.csv", listaEmpleados);
             	}
@@ -72,7 +72,7 @@ int main()
             	}
             	break;
             case 4:
-                if(flagText == 1 || flagBin == 1)
+                if(flagATexto == 1 || flagABinario == 1)
 				{
             		controller_editEmployee(listaEmpleados);
 				}
@@ -82,7 +82,7 @@ int main()
 				}
             	break;
             case 5:
-            	if(flagText == 1 || flagBin == 1)
+            	if(flagATexto == 1 || flagABinario == 1)
 				{
             		controller_removeEmployee(listaEmpleados);
 				}
@@ -92,7 +92,7 @@ int main()
 				}
             	break;
             case 6:
-            	if(flagText == 1 || flagBin == 1)
+            	if(flagATexto == 1 || flagABinario == 1)
 				{
             		controller_ListEmployee(listaEmpleados);
 				}
@@ -102,7 +102,14 @@ int main()
 				}
             	break;
             case 7:
-                controller_sortEmployee(listaEmpleados);
+                if(flagATexto == 1 || flagABinario == 1)
+				{
+            		controller_sortEmployee(listaEmpleados);
+				}
+				else
+				{
+					printf("Error. No hay archivos registrados.\n");
+				}
             	break;
             case 8:
             	controller_saveAsText("data.csv", listaEmpleados);
