@@ -114,8 +114,8 @@ int actualizarId(int id)
 int addJugador(char* path , LinkedList* pLista)
 {
     int proxId;
-    int ultimoIndice = ll_len(pLista) - 1;
-	eJugador* auxId = new_Jugador();
+    //int ultimoIndice = ll_len(pLista) - 1;
+	//eJugador* auxId = new_Jugador();
 	char auxNom[128];
 	char auxNomU[128];
 	char auxPais[21];
@@ -133,16 +133,8 @@ int addJugador(char* path , LinkedList* pLista)
 		utn_getCadena(auxPais, 21, 2, "Ingrese pais: ", "Error, pais invalido. Reintente");
         utn_getEntero(&auxPuntos, 2, "Ingrese cantidad de puntos (max. 5 cifras): ", "Error, cantidad invalida.  Reintente\n", 0, 99999);
 
-        //normalizeStr(auxNom);
-        //proxId = employee_proxId(pArrayListEmployee) + 1;
-        //obetenerId(&proxId);
-        //printf("ID= %d\n", proxId);
-        //actualizarId(proxId);
 
-        auxId = (eJugador*) ll_get(pLista, ultimoIndice);
-        jugador_getId(auxId, &proxId);
-
-        pJugador->id = proxId + 1;
+        proxId = jugador_proxId(pLista) + 1;
 
 			if(proxId >= 0)
 			{
@@ -175,9 +167,9 @@ int addJugador(char* path , LinkedList* pLista)
 int editJugador(LinkedList* pLista)
 {
     int auxId;
-    int ultId;
+    //int ultId;
     int exito = 1;
-    int indice;
+    int indice = -1;
     char seguir = 's';
     char confirm;
     char auxNom[128];
@@ -185,7 +177,7 @@ int editJugador(LinkedList* pLista)
 	char auxPais[21];
 	int auxPuntos;
 
-    eJugador* pJugador;
+    eJugador* pJugador = new_Jugador();
 
     system("cls");
     printf("***** Modificar jugador *****\n\n");
@@ -194,7 +186,7 @@ int editJugador(LinkedList* pLista)
     if(pLista != NULL)
     {
         mostrarJugadores(pLista);
-
+        /*
         for(int i = 0; i < ll_len(pLista); i++)
         {
             pJugador = ll_get(pLista, i);
@@ -205,15 +197,16 @@ int editJugador(LinkedList* pLista)
                 ultId = auxId;
             }
         }
+        */
 
-        if(!utn_getEntero(&auxId, 2, "Ingrese ID de jugador a modificar: ", "Error, ID incorrecto. Reintente", 0, ultId))
+        if(!utn_getEntero(&auxId, 2, "Ingrese ID de jugador a modificar: ", "Error, ID incorrecto. Reintente", 0, 10000))
         {
             indice = buscarJugadorPorId(pLista, auxId);
             if(indice == -1)
             {
                 printf("No hay registro de un jugador con ese ID\n");
             }
-            else
+            else if(indice >= 0)
             {
                 system("cls");
                 printf("\n ID \tNombre Completo \t       Nombre de Usuario \tPais \t                Puntos\n\n");
@@ -415,7 +408,7 @@ int removeJugador(LinkedList* pLista)
 			}
 		}
 
-		if(!utn_getEntero(&auxId, 2, "Ingrese ID de jugador a modificar: ", "Error, ID incorrecto. Reintente", 0, ultId))
+		if(!utn_getEntero(&auxId, 2, "Ingrese ID de jugador a eleminar: ", "Error, ID incorrecto. Reintente", 0, ultId))
 		{
 			index = buscarJugadorPorId(pLista, auxId);
 			if(index == -1)
@@ -477,54 +470,12 @@ int mostrarJugadores(LinkedList* pLista)
 
 //---------------------------------------------------------------------------------------------------
 
-/*
-int sortJugador(LinkedList* pLista)
-{
-    int flag = 0;
-    int exito = 1;
-
-    printf("Espere por favor...\n");
-    ll_sort(pLista, sortName, 1);
-    exito = 0;
-
-    if(exito == 0)
-    {
-        printf("Los jugadores fueron ordenados exitosamente\n");
-    }
-    else
-    {
-        printf("Error al ordenar los jugadores\n");
-    }
-
-
-    printf("***** Listado de jugadores *****\n");
-    printf("\n ID \tNombre Completo \t       Nombre de Usuario \tPais \t                Puntos\n\n");
-
-    for(int i=0; i < ll_len(pLista); i++)
-    {
-        if(pLista != NULL)
-        {
-            mostrarJugadores(pLista);
-            flag = 1;
-        }
-    }
-    if(flag == 0)
-    {
-        printf("*** No hay jugadores que listar ***\n");
-    }
-
-    return exito;
-}
-*/
-
-
 int sortJugador(LinkedList* pLista)
 {
 
     system("cls");
 	int exito = 1;
 	int orden;
-	//int opcion;
 	LinkedList* pCopiaLista = ll_newLinkedList();
 
 
@@ -537,16 +488,12 @@ int sortJugador(LinkedList* pLista)
                 utn_getEntero(&orden, 2, "Ingrese el orden en el que quiere que se \nacomoden los nombres.Recuerde que este proceso\ntarda unos segundos. (1 ascendente o 0 descendente): ", "Error. Ingrese un numero valido\n", 0, 1);
 
                 ll_sort(pCopiaLista, sortJugadorxNombreCompleto, orden);
-
-                //se ordenan por nombre
                 break;
             case 2:  //puntos
                 system("cls");
                 utn_getEntero(&orden, 2, "Ingrese el orden en el que quiere que se \nacomoden los Puntos.Recuerde que este proceso\ntarda unos segundos. (1 ascendente o 0 descendente): ", "Error. Ingrese un numero valido\n", 0, 1);
 
                 ll_sort(pCopiaLista, sortJugadorxPuntos, orden);
-
-                //se ordenan por puntos
                 break;
 
             }

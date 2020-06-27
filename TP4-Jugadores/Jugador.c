@@ -81,7 +81,6 @@ int jugador_setNombreCompleto(eJugador* this, char* nombreCompleto)
 
 	if(this != NULL && nombreCompleto != NULL)
 	{
-        //normalizeStr(marca);
         strncpy(this->nombreCompleto, nombreCompleto, 128);
         exito = 0;
 	}
@@ -251,24 +250,25 @@ int mostrarJugador(LinkedList* pLista, int indice)
 int buscarJugadorPorId(LinkedList* pLista, int id)
 {
 	int indice = -1;
-	eJugador* pJugador;
+	eJugador* pJugador = new_Jugador();
 	int flagId = 1;
-    int auxId;
+    int auxId = 0;
 
 	for(int i = 0; i < ll_len(pLista); i++)
 	{
 		pJugador = (eJugador*) ll_get(pLista, i);
 
-		if(auxId == id && jugador_getId(pJugador, &auxId) == 0)
+		if(!(jugador_getId(pJugador, &auxId)) && auxId == id)
 		{
 			indice = i;
 			flagId = 0;
+			break;
 		}
 	}
 
 	if(flagId == 1) //Si el flag sigue valiendo 1
     {
-        printf("No registro de jugadores con ese ID\n");
+        printf("No hay registro de jugadores con ese ID\n");
     }
 
 	return indice;
@@ -276,20 +276,19 @@ int buscarJugadorPorId(LinkedList* pLista, int id)
 
 //---------------------------------------------------------------------------------------------------
 
-/*
-int employee_proxId(LinkedList* pArrayListEmployee)
+int jugador_proxId(LinkedList* pLista)
 {
-	Employee* pEmployee;
+	eJugador* pJugador;
 	int auxId;
 	int ultId = 0;
 	int flagId = 0;
 
-	if(pArrayListEmployee != NULL)
+	if(pLista != NULL)
 	{
-		for(int i = 0; i < ll_len(pArrayListEmployee); i++)
+		for(int i = 0; i < ll_len(pLista); i++)
 		{
-			pEmployee = (Employee*) ll_get(pArrayListEmployee,i);
-			employee_getId(pEmployee, &auxId);
+			pJugador = (eJugador*) ll_get(pLista, i);
+			jugador_getId(pJugador, &auxId);
 
 			if(auxId > ultId || flagId == 0)
 			{
@@ -300,7 +299,6 @@ int employee_proxId(LinkedList* pArrayListEmployee)
 	}
 	return ultId;
 }
-*/
 
 //---------------------------------------------------------------------------------------------------
 
