@@ -62,13 +62,13 @@
 
 1593181818 c:\users\luana\desktop\workspace\tp4-jugadores\linkedlist.h
 
-1593202279 source:c:\users\luana\desktop\workspace\tp4-jugadores\parser.c
+1593311074 source:c:\users\luana\desktop\workspace\tp4-jugadores\parser.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Jugador.h"
 
-1593301491 c:\users\luana\desktop\workspace\tp4-jugadores\jugador.h
+1593310555 c:\users\luana\desktop\workspace\tp4-jugadores\jugador.h
 	"LinkedList.h"
 
 1593281076 source:c:\users\luana\desktop\workspace\tp4-jugadores\utn.c
@@ -80,14 +80,14 @@
 
 1593281077 c:\users\luana\desktop\workspace\tp4-jugadores\utn.h
 
-1593300398 source:c:\users\luana\desktop\workspace\tp4-jugadores\jugador.c
+1593310516 source:c:\users\luana\desktop\workspace\tp4-jugadores\jugador.c
 	<stdio.h>
 	<stdlib.h>
 	"Jugador.h"
 	"utn.h"
 	<string.h>
 
-1593294829 source:c:\users\luana\desktop\workspace\tp4-jugadores\main.c
+1593311074 source:c:\users\luana\desktop\workspace\tp4-jugadores\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -95,9 +95,9 @@
 	"Jugador.h"
 	"Controller.h"
 
-1593302060 c:\users\luana\desktop\workspace\tp4-jugadores\controller.h
+1593311124 c:\users\luana\desktop\workspace\tp4-jugadores\controller.h
 
-1593298631 source:c:\users\luana\desktop\workspace\tp4-jugadores\controller.c
+1593311124 source:c:\users\luana\desktop\workspace\tp4-jugadores\controller.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -107,5 +107,5 @@
 	"Controller.h"
 	<string.h>
 
-1593200097 c:\users\luana\desktop\workspace\tp4-jugadores\parser.h
+1593310687 c:\users\luana\desktop\workspace\tp4-jugadores\parser.h
 

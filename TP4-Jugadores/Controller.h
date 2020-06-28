@@ -8,7 +8,7 @@
  * \return int exito [1] si hubo error, [0] si no hubo error
  *
  */
-int loadFromText(char* path , LinkedList* pLista);
+int cargarTexto(char* path , LinkedList* pLista);
 
 /** \brief Carga los datos de los jugadores desde el archivo jugador.csv (modo binario).
  *
@@ -17,7 +17,7 @@ int loadFromText(char* path , LinkedList* pLista);
  * \return int exito [1] si hubo error, [0] si no hubo error
  *
  */
-int loadFromBinary(char* path , LinkedList* pLista);
+int cargarBinario(char* path , LinkedList* pLista);
 
 /** \brief Toma el id desde el archivo
  *
@@ -42,7 +42,7 @@ int actualizarId(int id);
  * \return int exito [1] si hubo error, [0] si no hubo error
  *
  */
-int addJugador(char* path , LinkedList* pLista);
+int agregarJugador(char* path , LinkedList* pLista);
 
 /** \brief Modifica los datos de un jugador elegido por ID
  *
@@ -51,7 +51,7 @@ int addJugador(char* path , LinkedList* pLista);
  * \return int exito [1] si hubo error, [0] si no hubo error
  *
  */
-int editJugador(LinkedList* pLista);
+int editarJugador(LinkedList* pLista);
 
 /** \brief Muestra las opciones para elegir la modificacion del jugador
  *
@@ -67,7 +67,7 @@ int menuModificar();
  * \return int exito [1] si hubo error, [0] si no hubo error
  *
  */
-int removeJugador(LinkedList* pLista);
+int eliminarJugador(LinkedList* pLista);
 
 /** \brief Lista a los jugadores
  *
@@ -100,7 +100,7 @@ int menuSortJugador();
  * \return int exito [1] si hubo error, [0] si no hubo error
  *
  */
-int saveAsText(char* path , LinkedList* pLista);
+int guardarComoTexto(char* path, LinkedList* pLista);
 
 /** \brief Guarda los datos de los jugadores en el archivo jugador.csv (modo binario).
  *
@@ -109,6 +109,6 @@ int saveAsText(char* path , LinkedList* pLista);
  * \return int exito [1] si hubo error, [0] si no hubo error
  *
  */
-int saveAsBinary(char* path , LinkedList* pLista);
+int guardarComoBinario(char* path, LinkedList* pLista);
 
 #endif // CONTROLLER_H_INCLUDED

@@ -5,7 +5,7 @@
 #include <string.h>
 
 
-eJugador* new_Jugador()
+eJugador* nuevo_Jugador()
 {
 	return (eJugador*) malloc(sizeof(eJugador));
 }
@@ -15,7 +15,7 @@ eJugador* new_Jugador()
 eJugador* jugadoresParametros(char* idStr, char* nombreCompletoStr, char* nombreUsuarioStr, char* paisStr, char* puntosStr)
 {
 	eJugador* nJugador = NULL;
-	nJugador = new_Jugador();
+	nJugador = nuevo_Jugador();
 
 	if(puntosStr != NULL && idStr != NULL && nombreCompletoStr != NULL && nombreUsuarioStr != NULL && paisStr != NULL)
 	{
@@ -26,7 +26,7 @@ eJugador* jugadoresParametros(char* idStr, char* nombreCompletoStr, char* nombre
             jugador_setPais(nJugador, paisStr) == -1 ||
             jugador_setPuntos(nJugador, atoi(puntosStr)) == -1)
 		{
-			delete_jugador(nJugador);
+			borrar_jugador(nJugador);
 			nJugador = NULL;
 		}
 		else
@@ -44,7 +44,7 @@ eJugador* jugadoresParametros(char* idStr, char* nombreCompletoStr, char* nombre
 
 //---------------------------------------------------------------------------------------------------
 
-int delete_jugador(eJugador* this)
+int borrar_jugador(eJugador* this)
 {
 	int exito = 1;
 
@@ -250,7 +250,7 @@ int mostrarJugador(LinkedList* pLista, int indice)
 int buscarJugadorPorId(LinkedList* pLista, int id)
 {
 	int indice = -1;
-	eJugador* pJugador = new_Jugador();
+	eJugador* pJugador = nuevo_Jugador();
 	int flagId = 1;
     int auxId = 0;
 
@@ -356,22 +356,3 @@ int sortJugadorxPuntos(void* x, void* y)
 }
 
 //---------------------------------------------------------------------------------------------------
-
-/*
-int sortName(void* firstName, void* secondName)
-{
-    int change;
-    eJugador* firstNameEmployee;
-    eJugador* secondNameEmployee;
-
-    if(firstName != NULL && secondName != NULL)
-    {
-        firstNameEmployee = (eJugador*) firstName;
-        secondNameEmployee = (eJugador*) secondName;
-
-        change = strcmp(firstNameEmployee->nombreCompleto, secondNameEmployee->nombreCompleto);
-    }
-
-    return change;
-}
-*/

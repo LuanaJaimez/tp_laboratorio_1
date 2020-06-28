@@ -18,7 +18,7 @@ typedef struct
  * \return Puntero al espacio guardado
  *
  */
-eJugador* new_Jugador();
+eJugador* nuevo_Jugador();
 
 
 /** \brief Carga los nuevos parametros de jugadores
@@ -39,7 +39,7 @@ eJugador* jugadoresParametros(char* idStr, char* nombreCompletoStr, char* nombre
  * \return int exito [1] si hubo error, [0] si no hubo error
  *
  */
-int delete_jugador(eJugador* this);
+int borrar_jugador(eJugador* this);
 
 
 /** \brief Carga el id

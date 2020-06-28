@@ -30,7 +30,7 @@ int main()
             case 1:
             	if(flagBinario != 1)//No existe
             	{
-            		if(!loadFromText("jugador.csv", listaJugadores))
+            		if(!cargarTexto("jugador.csv", listaJugadores))
 					{
 						flagTexto = 1;
 					}
@@ -43,7 +43,7 @@ int main()
             case 2:
             	if(flagTexto != 1)//No existe
             	{
-            		if(!loadFromBinary("jugadores.bin", listaJugadores))
+            		if(!cargarBinario("jugador.bin", listaJugadores))
             		{
             			flagBinario = 1;
             		}
@@ -57,7 +57,7 @@ int main()
             	//validar que no entre si no entro al primer case (ahi ya leeria el archivo)
             	if(flagTexto == 1 || flagBinario == 1)
             	{
-            		addJugador("jugador.csv", listaJugadores);
+            		agregarJugador("jugador.csv", listaJugadores);
             	}
             	else
             	{
@@ -67,7 +67,7 @@ int main()
             case 4:
                 if(flagTexto == 1 || flagBinario == 1)
 				{
-            		editJugador(listaJugadores);
+            		editarJugador(listaJugadores);
 				}
 				else
 				{
@@ -77,7 +77,7 @@ int main()
             case 5:
             	if(flagTexto == 1 || flagBinario == 1)
 				{
-            		removeJugador(listaJugadores);
+            		eliminarJugador(listaJugadores);
 				}
 				else
 				{
@@ -105,10 +105,10 @@ int main()
 				}
             	break;
             case 8:
-            	saveAsText("jugador.csv", listaJugadores);
+            	guardarComoTexto("jugador.csv", listaJugadores);
             	break;
             case 9:
-            	saveAsBinary("jugadores.bin", listaJugadores);
+            	guardarComoBinario("jugador.bin", listaJugadores);
             	break;
             case 10:
             	printf("Confirma salida? s/n: ");

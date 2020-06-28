@@ -8,7 +8,7 @@
 #include <string.h>
 
 
-int loadFromText(char* path , LinkedList* pLista)
+int cargarTexto(char* path , LinkedList* pLista)
 {
 	FILE* pFile;
 	int exito = 1;
@@ -40,7 +40,7 @@ int loadFromText(char* path , LinkedList* pLista)
 
 //---------------------------------------------------------------------------------------------------
 
-int loadFromBinary(char* path , LinkedList* pLista)
+int cargarBinario(char* path , LinkedList* pLista)
 {
 	FILE* pFile;
 	int exito = 1;
@@ -111,11 +111,9 @@ int actualizarId(int id)
 
 //---------------------------------------------------------------------------------------------------
 
-int addJugador(char* path , LinkedList* pLista)
+int agregarJugador(char* path , LinkedList* pLista)
 {
     int proxId;
-    //int ultimoIndice = ll_len(pLista) - 1;
-	//eJugador* auxId = new_Jugador();
 	char auxNom[128];
 	char auxNomU[128];
 	char auxPais[21];
@@ -123,7 +121,7 @@ int addJugador(char* path , LinkedList* pLista)
 	//int flag = 0;
 	int exito = 1;
 
-	eJugador* pJugador = new_Jugador();
+	eJugador* pJugador = nuevo_Jugador();
 
 	if(pLista != NULL && pJugador != NULL)
 	{
@@ -164,10 +162,9 @@ int addJugador(char* path , LinkedList* pLista)
 
 //---------------------------------------------------------------------------------------------------
 
-int editJugador(LinkedList* pLista)
+int editarJugador(LinkedList* pLista)
 {
     int auxId;
-    //int ultId;
     int exito = 1;
     int indice = -1;
     char seguir = 's';
@@ -177,7 +174,7 @@ int editJugador(LinkedList* pLista)
 	char auxPais[21];
 	int auxPuntos;
 
-    eJugador* pJugador = new_Jugador();
+    eJugador* pJugador = nuevo_Jugador();
 
     system("cls");
     printf("***** Modificar jugador *****\n\n");
@@ -186,18 +183,6 @@ int editJugador(LinkedList* pLista)
     if(pLista != NULL)
     {
         mostrarJugadores(pLista);
-        /*
-        for(int i = 0; i < ll_len(pLista); i++)
-        {
-            pJugador = ll_get(pLista, i);
-
-            jugador_getId(pJugador, &auxId);
-            if(auxId >= ultId)
-            {
-                ultId = auxId;
-            }
-        }
-        */
 
         if(!utn_getEntero(&auxId, 2, "Ingrese ID de jugador a modificar: ", "Error, ID incorrecto. Reintente", 0, 10000))
         {
@@ -384,7 +369,7 @@ int menuModificar()
 
 //---------------------------------------------------------------------------------------------------
 
-int removeJugador(LinkedList* pLista)
+int eliminarJugador(LinkedList* pLista)
 {
 	int exito = 1;
 	int auxId;
@@ -425,7 +410,7 @@ int removeJugador(LinkedList* pLista)
 				if(confirm == 's')
 				{
 					ll_remove(pLista, index);
-					delete_jugador(pJugador);
+					borrar_jugador(pJugador);
 
 					printf("Baja exitosa\n");
 
@@ -479,7 +464,7 @@ int sortJugador(LinkedList* pLista)
 	LinkedList* pCopiaLista = ll_newLinkedList();
 
 
-	if((pCopiaLista = ll_clone(pLista)) != NULL)  //crea una copia de la lista para mostrar, ya que sino, la opcion 5 se veria afectada.
+	if((pCopiaLista = ll_clone(pLista)) != NULL)
     {
         switch(menuSortJugador())
         {
@@ -527,43 +512,10 @@ int menuSortJugador()
 
     return option;
 }
-//---------------------------------------------------------------------------------------------------
-
-int crearCopiaSubList(LinkedList* pLista)
-{
-    system("cls");
-    int exito = 1;
-    int desde;
-    int hasta;
-    LinkedList* sublista;
-
-
-
-    if(!(utn_getEntero(&desde, 2 , "Ingrese desde que Id donde desea crear la sublista: ", "Error. Ingrese un numero positivo o mas chico.\n\n", 0, ll_len(pLista))))
-       {
-
-           if(!(utn_getEntero(&hasta, 2 , "Ingrese hasta que Id desea crear la sublista: ", "Error. Ingrese un numero positivo o mas chico.\n\n", 0, ll_len(pLista))))
-              {
-
-                   // desde--;
-                   sublista = ll_subList(pLista,desde,hasta);
-
-
-
-                    mostrarJugadores(sublista);
-
-                    exito = 0;
-
-              }
-                ll_deleteLinkedList(sublista);
-
-       }
-       return exito;
-}
 
 //---------------------------------------------------------------------------------------------------
 
-int saveAsText(char* path , LinkedList* pLista)
+int guardarComoTexto(char* path, LinkedList* pLista)
 {
 	int auxId;
 	char auxNombreC[128];
@@ -608,7 +560,7 @@ int saveAsText(char* path , LinkedList* pLista)
 
 //---------------------------------------------------------------------------------------------------
 
-int saveAsBinary(char* path , LinkedList* pLista)
+int guardarComoBinario(char* path, LinkedList* pLista)
 {
 	int exito = 1;
 	FILE* pFile;
@@ -640,41 +592,3 @@ int saveAsBinary(char* path , LinkedList* pLista)
 }
 
 //---------------------------------------------------------------------------------------------------
-
-/*
-int filtrarxPuntos(void* unJugador)
-{
-    int auxReturn = 0;
-    eJugador* x;
-
-    if(unJugador != NULL)
-    {
-        x = (eJugador*) unJugador;
-        if(x->puntos >= 1000)
-        {
-            auxReturn = 1;
-        }
-    }
-
-    return auxReturn;
-}
-*/
-
-/*
-int filtrarxPais(void* unJugador)
-{
-    int auxReturn = 0;
-    eJugador* x;
-
-    if(unJugador != NULL)
-    {
-        x = (eJugador*) unJugador;
-        if(strcmp(x->pais, "China") == 0)
-        {
-            auxReturn = 1;
-        }
-    }
-
-    return auxReturn;
-}
-*/

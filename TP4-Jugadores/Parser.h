@@ -1,20 +1,20 @@
 #ifndef PARSER_H_INCLUDED
 #define PARSER_H_INCLUDED
 
-/** \brief Analiza y parsea los datos de los empleados desde el archivo data.csv (modo texto).
+/** \brief Analiza y parsea los datos de los jugadores desde el archivo jugador.csv (modo texto).
  *
  * \param path char*
- * \param pArrayListEmployee LinkedList*
+ * \param pLista LinkedList*
  * \return exito [1] si hubo error, [0] si no hubo error
  *
  */
 int parser_JugadorATexto(FILE* pFile , LinkedList* pLista);
 
 
-/** \brief Analiza y parsea los datos de los empleados desde el archivo data.csv (modo binario).
+/** \brief Analiza y parsea los datos de los jugadores desde el archivo jugadores.csv (modo binario).
  *
  * \param path char*
- * \param pArrayListEmployee LinkedList*
+ * \param pLista LinkedList*
  * \return exito [1] si hubo error, [0] si no hubo error
  *
  */

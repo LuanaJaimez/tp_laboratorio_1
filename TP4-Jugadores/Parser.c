@@ -3,13 +3,6 @@
 #include "LinkedList.h"
 #include "Jugador.h"
 
-/** \brief Parsea los datos los datos de los empleados desde el archivo data.csv (modo texto).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int parser_JugadorATexto(FILE* pFile , LinkedList* pLista)
 {
 	int exito = 1;
@@ -48,13 +41,6 @@ int parser_JugadorATexto(FILE* pFile , LinkedList* pLista)
 
 //---------------------------------------------------------------------------------------------------
 
-/** \brief Parsea los datos los datos de los empleados desde el archivo data.csv (modo binario).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int parser_JugadorABinario(FILE* pFile , LinkedList* pLista)
 {
 	int exito = 1;
@@ -64,7 +50,7 @@ int parser_JugadorABinario(FILE* pFile , LinkedList* pLista)
 	{
 		do
 		{
-			pJugador = new_Jugador();
+			pJugador = nuevo_Jugador();
 			if(fread(pJugador, sizeof(eJugador), 1, pFile) == 1)
 			{
 				ll_add(pLista, pJugador);
